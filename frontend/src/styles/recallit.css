@@ -1,0 +1,333 @@
+/* =========================================================
+   Recallit — Colors & Type
+   One source of truth for visual foundations.
+   Direction: crayon-primary nostalgia, playground-youth, fresh-white.
+   ========================================================= */
+
+/* ---------- Webfonts ----------
+   Lilita One — chunky rounded display (playground-sign energy)
+   Fraunces    — soft serif for italic pull-quotes / memory moments
+   Geist       — clean UI sans
+   JetBrains Mono — meta / timers
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------------- COLOR ---------------- */
+
+  /* Paper / neutrals — bright white, very faintly tinted */
+  --paper:        #FFFFFF;   /* global bg */
+  --paper-2:      #F7F5FB;   /* raised cards — faint violet tint */
+  --paper-3:      #EEEAF4;   /* sunken / insets */
+  --paper-ink:    #E3DEEC;   /* dividers inside paper */
+
+  --ink:          #1A1430;   /* primary text — deep navy-violet */
+  --ink-2:        #4A425E;   /* secondary */
+  --ink-3:        #847C96;   /* tertiary / meta */
+  --ink-4:        #BFB9CC;   /* disabled */
+
+  /* SIGNATURE — grape / violet */
+  --amber:        #8338EC;   /* signature accent (legacy name kept) */
+  --amber-deep:   #6422C7;   /* pressed */
+  --amber-soft:   #E6D8FA;   /* tint for backgrounds */
+
+  /* Crayon secondary accents — tight 3-color system */
+  --coral:        #E63946;   /* crayon red — live / recording / hearts */
+  --coral-soft:   #FACDD1;
+  --teal:         #FFBE0B;   /* crayon yellow — sunshine / warnings */
+  --teal-soft:    #FFECB5;
+  --moss:         #7CC04B;   /* crayon green — online / success */
+  --moss-soft:    #D9EFC3;
+  --rose:         #FF9ECB;   /* soft sticker pink */
+  --stamp:        #E63946;   /* postmark — same crayon red */
+
+  /* Semantic aliases */
+  --fg-1:         var(--ink);
+  --fg-2:         var(--ink-2);
+  --fg-3:         var(--ink-3);
+  --fg-on-amber:  #FFFFFF;
+  --fg-on-ink:    #FFFFFF;
+
+  --bg-1:         var(--paper);
+  --bg-2:         var(--paper-2);
+  --bg-3:         var(--paper-3);
+
+  --accent:       var(--amber);
+  --accent-press: var(--amber-deep);
+  --danger:       var(--coral);
+  --success:      var(--moss);
+  --info:         var(--teal);
+
+  /* Hairlines */
+  --hairline:     rgba(26, 20, 48, 0.10);
+  --hairline-2:   rgba(26, 20, 48, 0.20);
+  --hairline-strong: var(--ink);
+
+  /* ---------------- SPACING ---------------- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-24: 96px;
+
+  /* ---------------- RADII ---------------- */
+  --r-sm:   8px;
+  --r-md:   14px;
+  --r-lg:   22px;
+  --r-xl:   32px;
+  --r-2xl:  40px;
+  --r-full: 999px;
+
+  /* ---------------- SHADOW / ELEVATION ---------------- */
+  /* Soft diffuse violet shadows — bright & airy */
+  --shadow-1: 0 1px 2px rgba(26, 20, 48, 0.05), 0 2px 6px rgba(131, 56, 236, 0.05);
+  --shadow-2: 0 8px 24px -8px rgba(131, 56, 236, 0.18), 0 2px 6px rgba(26, 20, 48, 0.04);
+  --shadow-3: 0 28px 60px -18px rgba(131, 56, 236, 0.22), 0 6px 14px rgba(26, 20, 48, 0.05);
+  --shadow-focus: 0 0 0 2px var(--paper), 0 0 0 4px var(--amber);
+
+  /* ---------------- MOTION ---------------- */
+  --ease:        cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-inout:  cubic-bezier(0.65, 0,    0.35, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-micro:   180ms;
+  --dur:         280ms;
+  --dur-sheet:   420ms;
+  --dur-route:   700ms;
+
+  /* ---------------- TYPOGRAPHY ---------------- */
+  --font-display: 'Lilita One', 'Fraunces', 'Georgia', system-ui, sans-serif;
+  --font-memory:  'Fraunces', 'Georgia', serif;  /* italic pull-quotes, memory copy */
+  --font-sans:    'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Type scale */
+  --fs-display-xl: 88px;   --lh-display-xl: 0.96;
+  --fs-display-l:  64px;   --lh-display-l:  1.00;
+  --fs-display-m:  44px;   --lh-display-m:  1.04;
+  --fs-h1:         34px;   --lh-h1:         1.14;
+  --fs-h2:         26px;   --lh-h2:         1.20;
+  --fs-h3:         20px;   --lh-h3:         1.28;
+  --fs-body-lg:    18px;   --lh-body-lg:    1.55;
+  --fs-body:       16px;   --lh-body:       1.55;
+  --fs-body-sm:    14px;   --lh-body-sm:    1.5;
+  --fs-meta:       12px;   --lh-meta:       1.35;
+  --fs-mono:       13px;   --lh-mono:       1.4;
+
+  --ls-tight:   -0.01em;
+  --ls-normal:   0;
+  --ls-wide:     0.02em;
+  --ls-eyebrow:  0.16em;
+}
+
+/* ---------------- BASE ---------------- */
+html, body {
+  background: var(--bg-1);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------------- SEMANTIC TYPE ---------------- */
+
+.display-xl, h1.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-display-xl);
+  letter-spacing: var(--ls-tight);
+  color: var(--fg-1);
+}
+.display-l {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-display-l);
+  line-height: var(--lh-display-l);
+  letter-spacing: var(--ls-tight);
+}
+.display-m {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-display-m);
+  line-height: var(--lh-display-m);
+  letter-spacing: var(--ls-tight);
+}
+
+h1, .h1 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-tight);
+  color: var(--fg-1);
+}
+h2, .h2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-tight);
+}
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+p, .body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+}
+.body-lg { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); }
+.body-sm { font-size: var(--fs-body-sm); line-height: var(--lh-body-sm); color: var(--fg-2); }
+.meta    { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--fg-3); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+/* Nostalgic italic pull-quote — memories, place names, spoken copy */
+.serif-italic, .memory {
+  font-family: var(--font-memory);
+  font-style: italic;
+  font-weight: 400;
+}
+
+code, .code, .mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  line-height: var(--lh-mono);
+  color: var(--fg-2);
+}
+
+/* ---------------- UTILITIES ---------------- */
+.paper-surface { background: var(--bg-1); }
+.card {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-1);
+}
+.postcard {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-2);
+}
+.hairline { border-top: 1px solid var(--hairline); }
+
+/* Sticker — soft rounded pill */
+.sticker {
+  display: inline-block;
+  background: var(--paper);
+  border-radius: var(--r-full);
+  box-shadow: var(--shadow-1);
+  padding: 6px 12px;
+  border: 1px solid var(--hairline);
+}
+
+/* Paper grain overlay (subtle) */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0 0.18  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Buttons (atomic) */
+.btn {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  letter-spacing: 0;
+  border: 0;
+  border-radius: var(--r-full);
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: transform var(--dur-micro) var(--ease), filter var(--dur-micro) var(--ease), box-shadow var(--dur-micro) var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--paper-2);
+  color: var(--ink);
+  box-shadow: var(--shadow-1);
+}
+.btn:hover   { filter: brightness(0.97); transform: translateY(-1px); box-shadow: var(--shadow-2); }
+.btn:active  { transform: translateY(0); filter: brightness(0.92); box-shadow: var(--shadow-1); }
+.btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+.btn[disabled]     { opacity: 0.4; cursor: not-allowed; }
+
+.btn-primary   { background: var(--amber); color: var(--fg-on-amber); box-shadow: 0 6px 18px -4px rgba(131, 56, 236, 0.45); }
+.btn-primary:active { background: var(--amber-deep); }
+.btn-secondary { background: var(--ink); color: var(--fg-on-ink); }
+.btn-ghost     { background: transparent; box-shadow: none; color: var(--fg-1); }
+.btn-ghost:hover { background: var(--paper-2); transform: none; box-shadow: none; }
+.btn-outline   { background: transparent; color: var(--ink); border: 1px solid var(--hairline-2); box-shadow: none; }
+
+/* Inputs */
+.input {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  background: var(--paper-2);
+  color: var(--fg-1);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color var(--dur-micro) var(--ease), box-shadow var(--dur-micro) var(--ease);
+  width: 100%;
+}
+.input::placeholder { color: var(--fg-3); }
+.input:focus { border-color: var(--amber); box-shadow: 0 0 0 3px var(--amber-soft); }
+
+/* Tags / chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: var(--r-full);
+  background: var(--paper-2);
+  color: var(--fg-1);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  border: 1px solid var(--hairline);
+}
+.chip.chip-amber { background: var(--amber-soft); color: var(--amber-deep); border-color: transparent; }
+.chip.chip-moss  { background: var(--moss-soft); color: #3C6B1E; border-color: transparent; }
+.chip.chip-teal  { background: var(--teal-soft); color: #8A5A00; border-color: transparent; }
+.chip.chip-coral { background: var(--coral-soft); color: #A11824; border-color: transparent; }
+
+/* Live pulse dot */
+.pulse-dot {
+  width: 10px; height: 10px; border-radius: 999px; background: var(--coral);
+  box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.55);
+  animation: pulse 2s var(--ease-inout) infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.55); }
+  70%  { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+}

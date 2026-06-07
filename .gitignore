@@ -1,0 +1,32 @@
+# backend
+backend/pulseboard
+backend/*.db
+backend/*.db-shm
+backend/*.db-wal
+
+# frontend
+frontend/node_modules
+frontend/dist
+frontend/dist-ssr
+frontend/.playwright-mcp
+
+# vercel
+.vercel/
+**/.vercel
+
+# env / os
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+
+# playwright
+.playwright-mcp/
+playwright-report/
+test-results/
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
